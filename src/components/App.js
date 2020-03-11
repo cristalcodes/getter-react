@@ -1,5 +1,5 @@
 import React from 'react';
-import Deck from './Deck'
+import Deck from './deck/Deck'
 
 class App extends React.Component{
   render(){
