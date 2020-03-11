@@ -1,9 +1,14 @@
 import React from 'react';
+import Deck from './Deck'
 
 class App extends React.Component{
   render(){
     return(
-      "hi!"
+      <div>
+        "The App Component is displaying"
+        <Deck />
+      </div>
+
     )
   }
 }
