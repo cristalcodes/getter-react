@@ -1,12 +1,12 @@
 import React from 'react';
-import Deck from './deck/Deck'
+import Stack from './stack/stack.jsx'
+import AppRouter from '../routes/index.js'
 
 class App extends React.Component{
   render(){
     return(
       <div>
-        "The App Component is displaying"
-        <Deck />
+        <AppRouter />
       </div>
 
     )
