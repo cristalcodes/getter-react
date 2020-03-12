@@ -1,6 +1,7 @@
 import React from 'react';
-import Stack from './stack/stack.jsx'
-import AppRouter from '../routes/index.js'
+import AppRouter from '../routes/index.js';
+import '@atlaskit/css-reset';
+import styled from 'styled-components';
 
 class App extends React.Component{
   render(){
