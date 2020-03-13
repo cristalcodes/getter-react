@@ -8,6 +8,7 @@ export default (state={decks: [], loading: false}, action) => {
 
     case "DECKS_LOADED":
       return {
+        ...state,
         decks: action.payload,
         loading: false
       }
