@@ -7,36 +7,30 @@ import styled from 'styled-components';
 // import { Draggable, Droppable } from 'react-beautiful-dnd';
 
 
+// STYLING//
 
 const Container = styled.div`
   display:flex;
 `;
-
-const Title = styled.h3`
-  padding: 8px;
-`;
+// END STYLING//
 
 class GetterApp extends React.Component{
 
-
   componentDidMount(){
     this.props.getDecks();
-
   }
 
   render(){
-
     //pulls all decks from state.
     const lists = this.props.decks;
-
 
     return(
       <div className="App">
         <Container>
-        {lists.map(deck => (
-          <GetterCardList name={deck.name} cards={deck.cards}/>
-        ))}
-      </Container>
+          {lists.map(deck => (
+            <GetterCardList name={deck.name} cards={deck.cards}/>
+          ))}
+        </Container>
       </div>
     )
   }
@@ -48,17 +42,6 @@ const mapStateToProps = state => {
     loading: state.decksReducer.loading
   }
 }
-
-const styles = {
-  listsContainer: {
-    display: "flex",
-    flexDirection: "row"
-  }
-};
-
-
-
-
 
 export default connect(mapStateToProps, {getDecks})(GetterApp);
 
@@ -73,3 +56,10 @@ export default connect(mapStateToProps, {getDecks})(GetterApp);
 //       )}
 //     </div>
 // );
+
+// const styles = {
+//   listsContainer: {
+//     display: "flex",
+//     flexDirection: "row"
+//   }
+// };
