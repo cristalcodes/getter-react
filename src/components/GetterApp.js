@@ -1,5 +1,6 @@
 import React from 'react';
 import GetterCardList from './GetterCardList';
+import '@atlaskit/css-reset';
 import { connect } from 'react-redux';
 import {getDecks} from '../actions/decksActions';
 import styled from 'styled-components';
@@ -31,11 +32,11 @@ class GetterApp extends React.Component{
 
     return(
       <div className="App">
-        <div style={styles.listsContainer}>
+        <Container>
         {lists.map(deck => (
           <GetterCardList name={deck.name} cards={deck.cards}/>
         ))}
-        </div>
+      </Container>
       </div>
     )
   }

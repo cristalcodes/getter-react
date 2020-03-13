@@ -11,7 +11,6 @@ const Container = styled.div`
   background-color: light;
   border-radius: 2px;
   width: 220px;
-
   display:flex;
   flex-direction: column;
   `;
@@ -28,59 +27,29 @@ const TaskList = styled.div`
 `;
 
 
-// class GetterCardList extends React.Component{
-//
-//   componentDidMount(){
-//     this.props.getCards(this.props.deckId)
-//   }
-//
-//
-//
-//   render(){
-//
-//     return(
-//       <Container>
-//         hi
-//       </Container>
-//
-//
-//     )
-//   }
-// }
-//
-// const mapStateToProps = state => {
-//   return {
-//     cards: state.cardsReducer.cards,
-//     loading: state.cardsReducer.loading
-//   }
-// }
-
-
-
-
-
-
-//
-// export default connect(mapStateToProps, {getCards})(GetterCardList);
 
 const GetterList = ({name, cards}) => {
   return(
-    <div style={styles.container}>
-      <h4>{name}</h4>
+    <Container>
+      <Title>{name}</Title>
+      <TaskList>
       { cards.map(card => (<GetterCard title={card.title} />
       ))}
-    </div>
+      </TaskList>
+    </Container>
   )
 }
 
-const styles = {
-  container: {
-    backgroundColor:'#ccc',
-    borderRadius:3,
-    width:300,
-    padding: 8,
-    marginRight: 8
-  }
-}
+
 
 export default GetterList;
+
+// const styles = {
+//   container: {
+//     backgroundColor:'#ccc',
+//     borderRadius:3,
+//     width:300,
+//     padding: 8,
+//     marginRight: 8
+//   }
+// }
