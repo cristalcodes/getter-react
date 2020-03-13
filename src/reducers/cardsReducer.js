@@ -7,8 +7,10 @@ export default (state={cards: [], loading: false}, action) => {
     }
 
     case "CARDS_LOADED":
+    // console.log(action.payload)
+
       return {
-        cards: action.payload,
+        cards:[ ...state.cards, action.payload],
         loading: false
       }
 

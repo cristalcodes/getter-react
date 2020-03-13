@@ -1,10 +1,10 @@
 export const getCards = (id) => {
   return(dispatch) => {
     dispatch({type: "LOADING_CARDS"})
-    return fetch(`/decks/${id}/cards`)
+    return fetch(`/decks/${id}`)
     .then(resp => resp.json())
-    .then(cards =>
-      dispatch({type: "CARDS_LOADED", payload: cards})
+    .then(deck =>
+      dispatch({type: "CARDS_LOADED", payload: deck.cards})
     )
   }
 }

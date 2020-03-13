@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from "../components/home";
-import Deck from "../components/deck/deck";
+import GetterApp from "../components/GetterApp";
 
 
 const Navbar = () =>(
@@ -19,10 +19,10 @@ const AppRouter = () => {
       <div>
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/decks" component={Deck} />
+        <Route exact path="/decks" component={GetterApp} />
       </div>
     </Router>
-    
+
 
   )
 }
