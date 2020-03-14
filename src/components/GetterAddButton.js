@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
+import '@atlaskit/css-reset';
 
 const FormButtonContainer = styled.div`
   marginTop: 8,
@@ -28,8 +29,7 @@ background-color:inherit;
 `;
 
 const buttonStyle = {
-  color: "white",
-  backgroundColor: "#5aac44",
+  backgroundColor: "white",
   margin:3,
 }
 
@@ -46,7 +46,7 @@ class GetterAddButton extends React.Component {
 
     return(
       <OpenFormButtonContainer>
-        <Card onClick={this.openForm} style={{color: "white", backgroundColor: "green", margin:3}}>
+        <Card onClick={this.openForm} style={{backgroundColor: "white", margin:3}}>
           <Icon>+</Icon>
             {buttonTitle}
         </Card>
