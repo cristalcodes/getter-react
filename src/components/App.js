@@ -1,7 +1,5 @@
 import React from 'react';
 import AppRouter from '../routes/index.js';
-import '@atlaskit/css-reset';
-
 
 class App extends React.Component{
   render(){
@@ -9,7 +7,6 @@ class App extends React.Component{
       <div>
         <AppRouter />
       </div>
-
     )
   }
 }

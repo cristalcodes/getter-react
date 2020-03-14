@@ -44,22 +44,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {getDecks})(GetterApp);
-
-// const decks = this.props.decks.map((deck, i) =>
-//   <div key={i}>
-//     <Title>
-//       {deck.name}
-//     </Title>
-//       {deck.cards.map((card, index)=>
-//         // <li key={index}>{card.title}</li>
-//         <GetterCardList key={index} card={card}/>
-//       )}
-//     </div>
-// );
-
-// const styles = {
-//   listsContainer: {
-//     display: "flex",
-//     flexDirection: "row"
-//   }
-// };

@@ -8,23 +8,24 @@ import styled from 'styled-components';
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
-  background-color: light;
+  background-color: white;
   border-radius: 2px;
-  width: 220px;
+  width: 230px;
   display:flex;
   flex-direction: column;
   `;
 
   const Title = styled.h3`
   padding: 8px;
+  background-color:lightgrey;
 `;
 
-const TaskList = styled.div`
-  padding: 8px;
-  background-color:${props => (props.isDraggingOver? 'lightblue': 'inherit')};
-  flex-grow:1;
-  min-height: 100px;
-`;
+  const TaskList = styled.div`
+    padding: 8px;
+    background-color:white;
+    flex-grow:1;
+    min-height: 100px;
+  `;
 
 
 
@@ -43,13 +44,3 @@ const GetterList = ({name, cards}) => {
 
 
 export default GetterList;
-
-// const styles = {
-//   container: {
-//     backgroundColor:'#ccc',
-//     borderRadius:3,
-//     width:300,
-//     padding: 8,
-//     marginRight: 8
-//   }
-// }

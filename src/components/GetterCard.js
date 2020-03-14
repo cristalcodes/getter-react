@@ -6,7 +6,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   margin-bottom: 8px;
-  background-color: ${props => (props.isDragging ? 'lightgreen': 'white')};
 `;
 
 const GetterCard =({title}) => {
@@ -24,9 +23,3 @@ const GetterCard =({title}) => {
 
 
 export default GetterCard;
-
-// const styles = {
-//   cardContainer: {
-//     marginBottom: 8
-//   }
-// };
