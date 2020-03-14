@@ -11,6 +11,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display:flex;
+  // flexDirection: "row"
 `;
 // END STYLING//
 
@@ -27,8 +28,8 @@ class GetterApp extends React.Component{
     return(
       <div className="App">
         <Container>
-          {lists.map(deck => (
-            <GetterCardList name={deck.name} cards={deck.cards}/>
+          {lists.map((deck, index) => (
+            <GetterCardList key={index} name={deck.name} cards={deck.cards}/>
           ))}
         </Container>
       </div>

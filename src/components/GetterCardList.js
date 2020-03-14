@@ -11,40 +11,45 @@ import GetterAddButton from './GetterAddButton';
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
-  background-color: white;
+  background-color: yellow;
   border-radius: 2px;
-  width: 230px;
+  width: 260px;
+  height: "100%";
   display:flex;
   flex-direction: column;
   `;
 
   const Title = styled.h3`
   padding: 8px;
-  background-color:lightgrey;
+  background-color:blue;
 `;
 
   const TaskList = styled.div`
     padding: 8px;
-    background-color:white;
+    background-color:lightblue;
     flex-grow:1;
-    min-height: 100px;
+    min-height: 10px;
   `;
 //END STYLING
 
 
-const GetterList = ({name, cards}) => {
+const GetterCardList = ({name, cards}) => {
   return(
+    <div>
     <Container>
       <Title>{name}</Title>
       <TaskList>
-      { cards.map(card => (<GetterCard title={card.title} />
-      ))}
+        { cards.map((card, index) => (
+          <GetterCard key={index} title={card.title} />
+        ))}
       </TaskList>
       <GetterAddButton />
     </Container>
+
+    </div>
   )
 }
 
 
 
-export default GetterList;
+export default GetterCardList;
