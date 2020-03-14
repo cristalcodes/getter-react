@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import {getCards} from '../actions/cardsActions';
 import GetterCard from './GetterCard';
 import styled from 'styled-components';
+import GetterAddButton from './GetterAddButton';
 // import CardContent from '@material-ui/core/CardContent';
 
+
+//STYLING
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
@@ -26,7 +29,7 @@ const Container = styled.div`
     flex-grow:1;
     min-height: 100px;
   `;
-
+//END STYLING
 
 
 const GetterList = ({name, cards}) => {
@@ -37,6 +40,7 @@ const GetterList = ({name, cards}) => {
       { cards.map(card => (<GetterCard title={card.title} />
       ))}
       </TaskList>
+      <GetterAddButton />
     </Container>
   )
 }
