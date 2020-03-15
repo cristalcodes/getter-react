@@ -29,7 +29,7 @@ class GetterApp extends React.Component{
       <div className="App">
         <Container>
           {lists.map((deck, index) => (
-            <GetterCardList key={index} name={deck.name} cards={deck.cards}/>
+            <GetterCardList key={index} name={deck.name} cards={deck.cards} deckId={deck.id}/>
           ))}
         </Container>
       </div>

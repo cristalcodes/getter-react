@@ -11,10 +11,11 @@ const Container = styled.div`
 const GetterCard =({title}) => {
   return(
     <Container>
-      <Card >
-        <Typography gutterBottom>
+      <Card variant="outlined">
+        <Typography style={{margin:5}} gutterBottom>
           {title}
         </Typography>
+
       </Card>
     </Container>
   )

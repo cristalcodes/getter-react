@@ -1,10 +1,13 @@
 import React from 'react';
 import Icon from "@material-ui/core/Icon";
 import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
 import '@atlaskit/css-reset';
+import { connect } from 'react-redux';
+import { addCard } from '../actions/cardsActions';
 
 
 const OpenFormButtonContainer = styled.div`
@@ -19,16 +22,14 @@ padding: 4px;
 background-color:#ebeef2;
 `;
 
-const buttonStyle = {
-  backgroundColor: "white",
-  margin:3,
-}
-
 class GetterAddButton extends React.Component {
 
   state = {
     formIsOpen : false,
-    title: ""
+    card: {
+      title: "",
+      deck_id: this.props.deckId
+    }
   }
 
   openFormButton = () => {
@@ -37,8 +38,8 @@ class GetterAddButton extends React.Component {
 
     return(
       <OpenFormButtonContainer>
-        <Card onClick={this.openForm} style={{backgroundColor: "white", margin:3}}>
-          <Icon>+</Icon>
+        <Card  variant="outlined" onClick={this.openForm} style={{backgroundColor: "white", margin:3}}>
+          <Icon size="small" style={{margin:3}}>+</Icon>
             {buttonTitle}
         </Card>
       </OpenFormButtonContainer>
@@ -59,32 +60,34 @@ class GetterAddButton extends React.Component {
 
     return(
       <div>
-
         <CardContainer>
-          <Card>
-            <TextareaAutosize
-            placeholder={placeholderText}
-            autoFocus
-            onBlur={this.closeForm}
-            onChange={this.handleInputChange}
-            style={{
-              resize:"none",
-              width: "100%",
-              overflow: "hidden",
-              outline: "none",
-              border:"none"
-            }}/>
+          <Card variant="outlined">
+            <CardContent>
+              <TextareaAutosize
+                placeholder={placeholderText}
+                autoFocus
+                onBlur={this.closeForm}
+                onChange={this.handleInputChange}
+                style={{
+                  resize:"none",
+                  width: "100%",
+                  overflow: "hidden",
+                  outline: "none",
+                  border:"none"
+                }}
+              />
+            </CardContent>
           </Card>
 
+          <Button onMouseDown ={this.handleMouseDown} variant ="contained" size="small" color="primary">
+            {buttonTitle}
+          </Button>
 
+          <Icon>x</Icon>
 
-        <Button variant ="contained" size="small" color="primary">
-          {buttonTitle}
-        </Button>
-        <Icon>x</Icon>
-
-</CardContainer>
+        </CardContainer>
         </div>
+
     )
   }
 
@@ -96,13 +99,36 @@ class GetterAddButton extends React.Component {
 
   handleInputChange = (event) => {
     this.setState({
-      title: event.target.value
+      card: {
+        ...this.state.card,
+        title: event.target.value
+      }
     })
   }
+
+
+  handleMouseDown = (event) => {
+    console.log("deck id is",this.props.deckId)
+    event.preventDefault();
+    const card = this.state.card;
+    this.props.addCard(card);
+    this.setState({
+      formIsOpen : false,
+      card: {
+        ...this.state.card,
+        title:""
+      }
+    })
+  }
+
+
+
+
+
 
   render(){
     return this.state.formIsOpen ? this.form() : this.openFormButton();
   }
 }
 
-export default GetterAddButton;
+export default connect(null, { addCard })(GetterAddButton);

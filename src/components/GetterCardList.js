@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {getCards} from '../actions/cardsActions';
-import GetterCard from './GetterCard';
 import styled from 'styled-components';
+import GetterCard from './GetterCard';
 import GetterAddButton from './GetterAddButton';
-// import CardContent from '@material-ui/core/CardContent';
+
 
 
 //STYLING
@@ -33,7 +31,7 @@ const Container = styled.div`
 //END STYLING
 
 
-const GetterCardList = ({name, cards}) => {
+const GetterCardList = ({name, cards, deckId}) => {
   return(
     <div>
     <Container>
@@ -43,7 +41,7 @@ const GetterCardList = ({name, cards}) => {
           <GetterCard key={index} title={card.title} />
         ))}
       </TaskList>
-      <GetterAddButton />
+      <GetterAddButton deckId={deckId}/>
     </Container>
 
     </div>
