@@ -6,25 +6,17 @@ import TextareaAutosize from 'react-textarea-autosize';
 import styled from 'styled-components';
 import '@atlaskit/css-reset';
 
-const FormButtonContainer = styled.div`
-  marginTop: 8,
-  display: "flex",
-  alignItems: "center"
-`;
 
 const OpenFormButtonContainer = styled.div`
-  display: "flex",
-  alignItems: "center",
-  cursor: "pointer",
-  borderRadius: 10,
-  height: 36,
-  width: "100%",
-  paddingLeft: 10
+marginTop: 8
+padding: 1px;
+background-color:#ebeef2;
+flex-grow:1;
 `;
 
 const CardContainer = styled.div`
-padding: 8px;
-background-color:inherit;
+padding: 4px;
+background-color:#ebeef2;
 
 `;
 
@@ -40,7 +32,7 @@ class GetterAddButton extends React.Component {
     title: ""
   }
 
-  addButton = () => {
+  openFormButton = () => {
     const list = this.props;
     const buttonTitle = list ? "Add a Card" : "Add a List"
 
@@ -84,15 +76,15 @@ class GetterAddButton extends React.Component {
               border:"none"
             }}/>
           </Card>
-        </CardContainer>
 
-      <FormButtonContainer>
+
+
         <Button variant ="contained" style={buttonStyle}>
           {buttonTitle}
         </Button>
-        <Icon style={{marginLeft:8, cursor: "pointer"}}>x</Icon>
-      </FormButtonContainer>
+        <Icon>x</Icon>
 
+</CardContainer>
         </div>
     )
   }
@@ -110,7 +102,7 @@ class GetterAddButton extends React.Component {
   }
 
   render(){
-    return this.state.formIsOpen ? this.form() : this.addButton();
+    return this.state.formIsOpen ? this.form() : this.openFormButton();
   }
 }
 

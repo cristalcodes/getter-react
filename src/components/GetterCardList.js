@@ -11,7 +11,7 @@ import GetterAddButton from './GetterAddButton';
 const Container = styled.div`
   margin: 8px;
   border: 1px solid lightgrey;
-  background-color: white;
+  background-color: "#ebeef2";
   border-radius: 2px;
   width: 260px;
   height: "100%";
@@ -25,8 +25,8 @@ const Container = styled.div`
 `;
 
   const TaskList = styled.div`
-    padding: 8px;
-    background-color:white;
+    padding: 4px;
+    background-color:#ebeef2;
     flex-grow:1;
     min-height: 10px;
   `;

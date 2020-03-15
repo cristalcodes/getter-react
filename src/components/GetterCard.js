@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
-  margin-bottom: 8px;
+  padding-bottom: 8px;
 `;
 
 const GetterCard =({title}) => {

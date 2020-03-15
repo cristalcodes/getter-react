@@ -14,13 +14,16 @@ const home = () => {
   return(
     <div>
     <Container>
-
-    <ReactFitText compressor={0.25}>
-      <h1>
-        <Clock format="h:mm:ss" interval={1000} ticking={true} />
-      </h1>
-    </ReactFitText>
-    <h5><center>Clock is ticking... what should you be working on?</center></h5>
+      <ReactFitText compressor={0.25}>
+        <h1>
+          <Clock format="h:mm:ss" interval={1000} ticking={true} />
+        </h1>
+      </ReactFitText>
+      <h3>
+        <center>
+          Clock is ticking... what should you be working on?
+        </center>
+      </h3>
     </Container>
     </div>
   )
