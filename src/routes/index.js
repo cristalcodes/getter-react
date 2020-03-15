@@ -2,9 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from "../components/home";
 import GetterApp from "../components/GetterApp";
+import GetterAddDeckForm from '../components/GetterAddDeckForm';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 const Navbar = () =>(
   <div >
@@ -17,6 +19,10 @@ const Navbar = () =>(
           <Typography variant="h6">
               <NavLink to="/decks" style={{color: 'white', textDecoration: 'none', marginRight:10}} >Decks</NavLink>
           </Typography>
+          <Typography >
+              <NavLink to="/addDeck" style={{color: 'white', textDecoration: 'none', marginRight:10}} ><AddCircleOutlineIcon /></NavLink>
+          </Typography>
+
         </Toolbar>
       </AppBar>
     </div>
@@ -31,6 +37,7 @@ const AppRouter = () => {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route exact path="/decks" component={GetterApp} />
+        <Route exact path="/addDeck" component={GetterAddDeckForm} />
       </div>
     </Router>
   )
