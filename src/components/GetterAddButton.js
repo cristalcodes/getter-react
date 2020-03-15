@@ -17,7 +17,6 @@ flex-grow:1;
 const CardContainer = styled.div`
 padding: 4px;
 background-color:#ebeef2;
-
 `;
 
 const buttonStyle = {
@@ -79,7 +78,7 @@ class GetterAddButton extends React.Component {
 
 
 
-        <Button variant ="contained" style={buttonStyle}>
+        <Button variant ="contained" size="small" color="primary">
           {buttonTitle}
         </Button>
         <Icon>x</Icon>
