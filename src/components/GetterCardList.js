@@ -31,21 +31,29 @@ const Container = styled.div`
 //END STYLING
 
 
-const GetterCardList = ({name, cards, deckId}) => {
-  return(
-    <div>
-    <Container>
-      <Title>{name}</Title>
-      <TaskList>
-        { cards.map((card, index) => (
-          <GetterCard key={index} title={card.title} />
-        ))}
-      </TaskList>
-      <GetterAddButton deckId={deckId}/>
-    </Container>
+class GetterCardList extends React.Component {
 
-    </div>
-  )
+  componentDidUpdate(prevProps){
+    console.log(prevProps)
+  }
+
+
+
+  render(){
+    const cardList = this.props
+    return(
+      <div>
+        <Container>
+          <Title>{cardList.name}</Title>
+          <TaskList>
+            { cardList.cards.map((card, index) => (
+              <GetterCard key={index} title={card.title} />
+            ))}
+          </TaskList>
+          <GetterAddButton deckId={cardList.deckId}/>
+        </Container>
+      </div>
+  )}
 }
 
 

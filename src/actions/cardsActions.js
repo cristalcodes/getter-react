@@ -10,8 +10,6 @@ export const addCard = (card) => {
     })
     .then(resp => resp.json())
     .then(card => {
-      console.log("Fetch Request Made")
-      console.log("Card", card)
       return dispatch({type: "CARD_ADDED", payload: card})
     })
   }

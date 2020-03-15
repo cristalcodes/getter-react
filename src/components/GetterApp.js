@@ -15,10 +15,16 @@ const Container = styled.div`
 `;
 // END STYLING//
 
-class GetterApp extends React.Component{
+class GetterApp extends React.PureComponent{
 
   componentDidMount(){
     this.props.getDecks();
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+   if (previousProps.cards !== this.props.cards) {
+     this.props.getDecks()
+   }
   }
 
   render(){
@@ -40,6 +46,7 @@ class GetterApp extends React.Component{
 const mapStateToProps = state => {
   return {
     decks: state.decksReducer.decks,
+    cards: state.cardsReducer.cards,
     loading: state.decksReducer.loading
   }
 }

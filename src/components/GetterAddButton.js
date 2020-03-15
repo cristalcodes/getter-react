@@ -108,7 +108,6 @@ class GetterAddButton extends React.Component {
 
 
   handleMouseDown = (event) => {
-    console.log("deck id is",this.props.deckId)
     event.preventDefault();
     const card = this.state.card;
     this.props.addCard(card);
@@ -130,5 +129,6 @@ class GetterAddButton extends React.Component {
     return this.state.formIsOpen ? this.form() : this.openFormButton();
   }
 }
+
 
 export default connect(null, { addCard })(GetterAddButton);
