@@ -14,3 +14,32 @@ export const addCard = (card) => {
     })
   }
 }
+
+export const deleteCard = (id) => {
+  console.log("You are in the delete action function. The id of this card is", id)
+
+  return (dispatch) => {
+
+    dispatch({type:"DELETE_CARD", payload: id})
+
+    const fetchURL= `/cards/${id}`
+    const configObj = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    };
+
+
+    return fetch(fetchURL, configObj)
+    .then(() => {
+      dispatch({type: "CARD_DELETED"})
+    })
+    .catch((error) => {
+      alert(`${error} on delete card` )
+    });
+
+  }
+
+}

@@ -2,15 +2,18 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import GetterCardButtons from './GetterCardMenu';
-import MenuIcon from '@material-ui/icons/Menu';
+import GetterCardButtons from './GetterCardButtons';
+import { connect } from 'react-redux';
 
 
 const Container = styled.div`
   padding-bottom: 4px;
 `;
+
+const InnerContainer = styled.div`
+  display:flex;
+  flexDirection: row;
+`
 
 class GetterCard extends React.Component{
 
@@ -35,16 +38,26 @@ class GetterCard extends React.Component{
       <div>
       <Container>
         <Card variant="outlined" onMouseEnter={this.showButtons} onMouseLeave={this.hideButtons}>
-          <Typography style={{margin:5}} gutterBottom>
-            {this.props.title}
+          <InnerContainer>
+          <Typography style={{margin:5}}>
+          {this.props.title}
           </Typography>
-          {this.state.showingButtons? <GetterCardButtons /> : " "}
+          {this.state.showingButtons? <GetterCardButtons cardId={this.props.cardId}/> : " "}
+          </InnerContainer>
         </Card>
       </Container>
       </div>
   )}
 }
 
+const mapStateToProps = state => {
+  return {
+    decks: state.decksReducer.decks,
+    cards: state.cardsReducer.cards,
+    loading: state.decksReducer.loading
+  }
+}
 
 
-export default GetterCard;
+
+export default connect(mapStateToProps)(GetterCard);

@@ -5,6 +5,7 @@ import GetterAddButton from './GetterAddButton';
 
 
 
+
 //STYLING
 const Container = styled.div`
   margin: 8px;
@@ -41,7 +42,7 @@ class GetterCardList extends React.Component {
           <Title>{cardList.name}</Title>
           <TaskList>
             { cardList.cards.map((card, index) => (
-              <GetterCard key={index} title={card.title} />
+              <GetterCard key={index} title={card.title} cardId={card.id} />
             ))}
           </TaskList>
           <GetterAddButton deckId={cardList.deckId}/>
