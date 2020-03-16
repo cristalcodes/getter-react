@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
-import GetterCardButtons from './GetterCardButtons';
+import GetterDeleteButtons from './GetterCardButtons';
 import { connect } from 'react-redux';
 
 
@@ -42,7 +42,7 @@ class GetterCard extends React.Component{
           <Typography style={{margin:5}}>
           {this.props.title}
           </Typography>
-          {this.state.showingButtons? <GetterCardButtons cardId={this.props.cardId}/> : " "}
+          {this.state.showingButtons? <GetterDeleteButtons cardId={this.props.cardId}/> : " "}
           </InnerContainer>
         </Card>
       </Container>
