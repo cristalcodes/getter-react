@@ -33,12 +33,6 @@ const Container = styled.div`
 
 class GetterCardList extends React.Component {
 
-  componentDidUpdate(prevProps){
-    console.log(prevProps)
-  }
-
-
-
   render(){
     const cardList = this.props
     return(
