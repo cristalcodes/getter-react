@@ -3,7 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { addDeck } from '../actions/decksActions'
+import { addDeck } from '../actions/decksActions';
+
 
 const FormContainer=styled.div`
 margin: 8px;
@@ -38,12 +39,14 @@ class AddDeckForm extends React.Component{
     const deck = this.state.deck
     this.props.addDeck(deck);
     this.setState({
-      card: {
-        ...this.state.card,
-        title:""
+      deck: {
+        name:""
       }
     })
+
   }
+
+
 
   render(){
     return(

@@ -30,8 +30,9 @@ class GetterApp extends React.PureComponent{
   }
 
   componentDidUpdate(previousProps, previousState) {
-   if (previousProps.cards !== this.props.cards ) {
+   if (previousProps.cards !== this.props.cards) {
      this.props.getDecks()
+     console.log(previousProps)
    }
 
 }
