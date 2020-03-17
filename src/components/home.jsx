@@ -1,6 +1,5 @@
 import React from 'react';
 import Clock from 'react-live-clock';
-import ReactFitText from 'react-fittext';
 import styled from 'styled-components';
 
 const Container= styled.div`

@@ -29,13 +29,3 @@ export const deleteCard = (id) => {
 
   }
 }
-
-// export const deleteCard = (id) => {
-//     fetch(`/cards/${id}`, {
-//       method: 'DELETE',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//     .then(console.log("Deleted") )
-// }

@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import {getDecks} from '../actions/decksActions';
 import styled from 'styled-components';
 import Clock from 'react-live-clock';
-import ReactFitText from 'react-fittext';
-// import { Draggable, Droppable } from 'react-beautiful-dnd';
+
 
 
 // STYLING//

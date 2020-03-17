@@ -1,11 +1,10 @@
 import React from 'react';
-import Menu from '@material-ui/core/Menu';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { editCard, deleteCard } from '../actions/cardsActions';
+import { deleteCard } from '../actions/cardsActions';
 
-class GetterDeleteButtons extends React.Component{
+class GetterDeleteCardButton extends React.Component{
 
   handleDeleteClick = () => {
     this.props.deleteCard(this.props.cardId)
@@ -23,4 +22,4 @@ class GetterDeleteButtons extends React.Component{
 
 
 
-export default connect(null, {deleteCard} )(GetterDeleteButtons);
+export default connect(null, {deleteCard} )(GetterDeleteCardButton);

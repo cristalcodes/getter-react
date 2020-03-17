@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { addDeck } from '../actions/decksActions';
+import { addDeck, getDecks } from '../actions/decksActions';
 
 
 const FormContainer=styled.div`
@@ -43,7 +43,7 @@ class AddDeckForm extends React.Component{
         name:""
       }
     })
-
+    this.props.getDecks();
   }
 
 
@@ -61,4 +61,4 @@ class AddDeckForm extends React.Component{
   }
 }
 
-export default connect(null, { addDeck })(AddDeckForm);
+export default connect(null, { addDeck, getDecks })(AddDeckForm);
