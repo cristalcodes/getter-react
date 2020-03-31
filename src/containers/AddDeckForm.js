@@ -25,7 +25,6 @@ class AddDeckForm extends React.Component{
   }
 
   handleSubmit =() => {
-    console.log(this.state.name)
     const deck = this.state.deck
     this.props.addDeck(deck);
     this.setState({

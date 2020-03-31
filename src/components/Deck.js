@@ -7,7 +7,6 @@ import AddCardButton from '../containers/AddCardButton';
 class Deck extends React.Component {
 
   render(){
-    console.log(1)
     const cardList = this.props
     return(
       <div>
