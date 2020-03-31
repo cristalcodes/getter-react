@@ -1,4 +1,6 @@
 export default (state={cards: [], loading: false}, action) => {
+  console.log(13)
+
   switch(action.type){
     case "ADD_CARD":
       return {
@@ -14,7 +16,6 @@ export default (state={cards: [], loading: false}, action) => {
       }
 
     case "DELETE_CARD":
-    debugger
       return {
         ...state,
         cards: [...state.cards.filter(card => card.id !== action.payload)],

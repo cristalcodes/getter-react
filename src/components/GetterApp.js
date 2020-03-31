@@ -33,7 +33,6 @@ class GetterApp extends React.PureComponent{
      this.props.getDecks()
      console.log(previousProps)
    }
-
 }
 
   renderLists = () => {

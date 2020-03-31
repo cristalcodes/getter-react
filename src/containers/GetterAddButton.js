@@ -33,6 +33,7 @@ class GetterAddButton extends React.Component {
   }
 
   openFormButton = () => {
+    console.log(2)
     const list = this.props;
     const buttonTitle = list ? "Add a Card" : "Add a List"
 
@@ -54,6 +55,8 @@ class GetterAddButton extends React.Component {
   }
 
   form = () => {
+    console.log(3)
+
     const {list}= this.props;
     const placeholderText = list ? "Enter deck name..." : "Enter card title... ";
     const buttonTitle = list ? "Add deck" : "Add card";
@@ -92,6 +95,8 @@ class GetterAddButton extends React.Component {
   }
 
   closeForm = (event) => {
+    console.log(4)
+
     this.setState({
       formIsOpen : false
     })
@@ -108,6 +113,8 @@ class GetterAddButton extends React.Component {
 
 
   handleMouseDown = (event) => {
+    console.log(5)
+
     event.preventDefault();
     const card = this.state.card;
     this.props.addCard(card);
@@ -126,6 +133,8 @@ class GetterAddButton extends React.Component {
 
 
   render(){
+    console.log(6)
+
     return this.state.formIsOpen ? this.form() : this.openFormButton();
   }
 }

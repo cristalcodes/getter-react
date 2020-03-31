@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import GetterCard from './GetterCard';
-import GetterAddButton from './GetterAddButton';
+import GetterCard from '../containers/GetterCard';
+import GetterAddButton from '../containers/GetterAddButton';
 
 
 
@@ -35,6 +35,7 @@ const Container = styled.div`
 class GetterCardList extends React.Component {
 
   render(){
+    console.log(1)
     const cardList = this.props
     return(
       <div>

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from "../components/home";
 import GetterApp from "../components/GetterApp";
-import GetterAddDeckForm from '../components/GetterAddDeckForm';
+import GetterAddDeckForm from '../containers/GetterAddDeckForm';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
