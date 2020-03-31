@@ -13,7 +13,7 @@ class Decks extends React.PureComponent{
     this.props.getDecks();
   }
 
-  componentDidUpdate(previousProps, previousState) {
+  componentDidUpdate(previousProps) {
    if (previousProps.cards !== this.props.cards) {
      this.props.getDecks()
    }
