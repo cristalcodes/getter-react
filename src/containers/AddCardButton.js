@@ -22,7 +22,7 @@ padding: 4px;
 background-color:#ebeef2;
 `;
 
-class GetterAddButton extends React.Component {
+class AddCardButton extends React.Component {
 
   state = {
     formIsOpen : false,
@@ -140,4 +140,4 @@ class GetterAddButton extends React.Component {
 }
 
 
-export default connect(null, { addCard })(GetterAddButton);
+export default connect(null, { addCard })(AddCardButton);

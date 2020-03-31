@@ -1,5 +1,5 @@
 import React from 'react';
-import GetterCardList from './GetterCardList';
+import Deck from './Deck';
 import '@atlaskit/css-reset';
 import { connect } from 'react-redux';
 import {getDecks} from '../actions/decksActions';
@@ -35,13 +35,13 @@ class GetterApp extends React.PureComponent{
    }
 }
 
-  renderLists = () => {
+  renderDecks = () => {
     const lists = this.props.decks;
 
     return(
       <Container>
         {lists.map((deck, index) => (
-          <GetterCardList key={index} name={deck.name} cards={deck.cards} deckId={deck.id}/>
+          <Deck key={index} name={deck.name} cards={deck.cards} deckId={deck.id}/>
         ))}
       </Container>
     )
@@ -67,7 +67,7 @@ class GetterApp extends React.PureComponent{
     //pulls all decks from state.
     return(
       <div className="App">
-        {this.props.decks.length > 0 ? this.renderLists() : this.renderMessage()}
+        {this.props.decks.length > 0 ? this.renderDecks() : this.renderMessage()}
       </div>
     )
   }

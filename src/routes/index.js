@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from "../components/home";
-import GetterApp from "../components/GetterApp";
-import GetterAddDeckForm from '../containers/GetterAddDeckForm';
+import Decks from "../components/Decks";
+import AddDeckForm from '../containers/AddDeckForm';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -36,8 +36,8 @@ const AppRouter = () => {
       <div>
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/decks" component={GetterApp} />
-        <Route exact path="/addDeck" component={GetterAddDeckForm} />
+        <Route exact path="/decks" component={Decks} />
+        <Route exact path="/addDeck" component={AddDeckForm} />
       </div>
     </Router>
   )

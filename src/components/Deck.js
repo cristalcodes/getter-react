@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import GetterCard from '../containers/GetterCard';
-import GetterAddButton from '../containers/GetterAddButton';
+import Card from '../containers/Card';
+import AddCardButton from '../containers/AddCardButton';
 
 
 
@@ -32,7 +32,7 @@ const Container = styled.div`
 //END STYLING
 
 
-class GetterCardList extends React.Component {
+class Deck extends React.Component {
 
   render(){
     console.log(1)
@@ -43,10 +43,10 @@ class GetterCardList extends React.Component {
           <Title>{cardList.name}</Title>
           <TaskList>
             { cardList.cards.map((card, index) => (
-              <GetterCard key={index} title={card.title} cardId={card.id} />
+              <Card key={index} title={card.title} cardId={card.id} />
             ))}
           </TaskList>
-          <GetterAddButton deckId={cardList.deckId}/>
+          <AddCardButton deckId={cardList.deckId}/>
         </Container>
       </div>
   )}
@@ -54,4 +54,4 @@ class GetterCardList extends React.Component {
 
 
 
-export default GetterCardList;
+export default Deck;
