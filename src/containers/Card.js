@@ -1,19 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import styled from 'styled-components';
 import DeleteCardButton from '../components/DeleteCardButton';
-import { connect } from 'react-redux';
 
-
-const Container = styled.div`
-  padding-bottom: 4px;
-`;
-
-const InnerContainer = styled.div`
-  display:flex;
-  flexDirection: row;
-`
 
 class GetterCard extends React.Component{
 
@@ -50,14 +41,21 @@ class GetterCard extends React.Component{
   )}
 }
 
+
+const Container = styled.div`
+  padding-bottom: 4px;
+`;
+
+const InnerContainer = styled.div`
+  display:flex;
+  flexDirection: row;
+`
+
 const mapStateToProps = state => {
   return {
     decks: state.decksReducer.decks,
-    cards: state.cardsReducer.cards,
-    loading: state.decksReducer.loading
+    cards: state.cardsReducer.cards
   }
 }
-
-
 
 export default connect(mapStateToProps)(GetterCard);

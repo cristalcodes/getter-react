@@ -6,16 +6,6 @@ import { connect } from 'react-redux';
 import { addDeck, getDecks } from '../actions/decksActions';
 
 
-const FormContainer=styled.div`
-margin: 8px;
-border: 1px solid lightgrey;
-background-color: "#ebeef2";
-border-radius: 2px;
-width: 260px;
-height: "100%";
-display:flex;
-flex-direction: column;
-`;
 
 class AddDeckForm extends React.Component{
 
@@ -60,5 +50,18 @@ class AddDeckForm extends React.Component{
     )
   }
 }
+
+
+const FormContainer=styled.div`
+margin: 8px;
+border: 1px solid lightgrey;
+background-color: "#ebeef2";
+border-radius: 2px;
+width: 260px;
+height: "100%";
+display:flex;
+flex-direction: column;
+`;
+
 
 export default connect(null, { addDeck, getDecks })(AddDeckForm);

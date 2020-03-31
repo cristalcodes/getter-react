@@ -2,12 +2,6 @@ import React from 'react';
 import Clock from 'react-live-clock';
 import styled from 'styled-components';
 
-const Container= styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
 
 const home = () => {
   return(
@@ -25,4 +19,12 @@ const home = () => {
     </div>
   )
 }
+
+const Container= styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
  export default home;

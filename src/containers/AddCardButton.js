@@ -10,17 +10,6 @@ import { connect } from 'react-redux';
 import { addCard } from '../actions/cardsActions';
 
 
-const OpenFormButtonContainer = styled.div`
-marginTop: 8
-padding: 1px;
-background-color:#ebeef2;
-flex-grow:1;
-`;
-
-const CardContainer = styled.div`
-padding: 4px;
-background-color:#ebeef2;
-`;
 
 class AddCardButton extends React.Component {
 
@@ -128,16 +117,25 @@ class AddCardButton extends React.Component {
   }
 
 
-
-
-
-
   render(){
     console.log(6)
 
     return this.state.formIsOpen ? this.form() : this.openFormButton();
   }
 }
+
+const OpenFormButtonContainer = styled.div`
+marginTop: 8
+padding: 1px;
+background-color:#ebeef2;
+flex-grow:1;
+`;
+
+const CardContainer = styled.div`
+padding: 4px;
+background-color:#ebeef2;
+`;
+
 
 
 export default connect(null, { addCard })(AddCardButton);

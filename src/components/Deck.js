@@ -4,6 +4,25 @@ import Card from '../containers/Card';
 import AddCardButton from '../containers/AddCardButton';
 
 
+class Deck extends React.Component {
+
+  render(){
+    console.log(1)
+    const cardList = this.props
+    return(
+      <div>
+        <Container>
+          <Title>{cardList.name}</Title>
+          <TaskList>
+            { cardList.cards.map((card, index) => (
+              <Card key={index} title={card.title} cardId={card.id} />
+            ))}
+          </TaskList>
+          <AddCardButton deckId={cardList.deckId}/>
+        </Container>
+      </div>
+  )}
+}
 
 
 //STYLING
@@ -30,28 +49,5 @@ const Container = styled.div`
     min-height: 10px;
   `;
 //END STYLING
-
-
-class Deck extends React.Component {
-
-  render(){
-    console.log(1)
-    const cardList = this.props
-    return(
-      <div>
-        <Container>
-          <Title>{cardList.name}</Title>
-          <TaskList>
-            { cardList.cards.map((card, index) => (
-              <Card key={index} title={card.title} cardId={card.id} />
-            ))}
-          </TaskList>
-          <AddCardButton deckId={cardList.deckId}/>
-        </Container>
-      </div>
-  )}
-}
-
-
 
 export default Deck;

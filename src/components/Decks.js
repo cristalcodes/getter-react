@@ -7,22 +7,7 @@ import styled from 'styled-components';
 import Clock from 'react-live-clock';
 
 
-
-// STYLING//
-const ClockContainer= styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
-
-const Container = styled.div`
-  display:flex;
-  // flexDirection: "row"
-`;
-// END STYLING//
-
-class GetterApp extends React.PureComponent{
+class Decks extends React.PureComponent{
 
   componentDidMount(){
     this.props.getDecks();
@@ -36,11 +21,11 @@ class GetterApp extends React.PureComponent{
 }
 
   renderDecks = () => {
-    const lists = this.props.decks;
+    const decks = this.props.decks;
 
     return(
       <Container>
-        {lists.map((deck, index) => (
+        {decks.map((deck, index) => (
           <Deck key={index} name={deck.name} cards={deck.cards} deckId={deck.id}/>
         ))}
       </Container>
@@ -73,6 +58,23 @@ class GetterApp extends React.PureComponent{
   }
 }
 
+
+
+// STYLING//
+const ClockContainer= styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
+const Container = styled.div`
+  display:flex;
+  // flexDirection: "row"
+`;
+// END STYLING//
+
+
 const mapStateToProps = state => {
   return {
     decks: state.decksReducer.decks,
@@ -81,4 +83,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getDecks})(GetterApp);
+export default connect(mapStateToProps, {getDecks})(Decks);
