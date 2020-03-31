@@ -7,17 +7,17 @@ import AddCardButton from '../containers/AddCardButton';
 class Deck extends React.Component {
 
   render(){
-    const cardList = this.props
+    const deck = this.props
     return(
       <div>
         <Container>
-          <Title>{cardList.name}</Title>
+          <Title>{deck.name}</Title>
           <TaskList>
-            { cardList.cards.map((card, index) => (
+            {deck.cards.map((card, index) => (
               <Card key={index} title={card.title} cardId={card.id} />
             ))}
           </TaskList>
-          <AddCardButton deckId={cardList.deckId}/>
+          <AddCardButton deckId={deck.deckId}/>
         </Container>
       </div>
   )}

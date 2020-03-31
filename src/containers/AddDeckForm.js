@@ -42,7 +42,6 @@ class AddDeckForm extends React.Component{
       <div>
       <FormContainer>
         <TextField required id="standard-required" label="Required" defaultValue="Deck Name" onChange={this.handleInputChange}/>
-
       </FormContainer>
       <Button variant="contained" style={{margin: 8}} onClick={this.handleSubmit}> Add Deck</Button>
       </div>
