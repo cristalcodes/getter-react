@@ -7,9 +7,11 @@ import { deleteCard } from '../actions/cardsActions';
 class DeleteCardButton extends React.Component{
 
   handleDeleteClick = () => {
+    console.log(4)
     this.props.deleteCard(this.props.cardId)
   }
   render(){
+    console.log(5)
     return (
       <span>
         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={this.handleDeleteClick}>

@@ -1,4 +1,5 @@
 export default (state={cards: [], loading: false}, action) => {
+  console.log(11)
   switch(action.type){
     case "ADD_CARD":
       return {

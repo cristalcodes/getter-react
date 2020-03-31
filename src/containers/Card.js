@@ -9,22 +9,34 @@ import DeleteCardButton from '../components/DeleteCardButton';
 class GetterCard extends React.Component{
 
   state = {
-    showingButtons: false
+    showingButtons: false,
+    count: 0
   }
 
   showButtons = event => {
+    console.log(1)
     this.setState({
       showingButtons: true
     })
   }
 
   hideButtons = event => {
+    console.log(2)
     this.setState({
       showingButtons: false
     })
   }
 
+  handleClick = () => {
+    const newCount = this.state.count + 1;
+    this.setState({
+      ...this.state,
+      count: newCount
+    })
+  }
+
   render(){
+    console.log(3)
     return(
       <div>
       <Container>
@@ -34,6 +46,7 @@ class GetterCard extends React.Component{
           {this.props.title}
           </Typography>
           {this.state.showingButtons? <DeleteCardButton cardId={this.props.cardId}/> : " "}
+          <input type="button" value ={this.state.count} onClick={this.handleClick}></input>
           </InnerContainer>
         </Card>
       </Container>
